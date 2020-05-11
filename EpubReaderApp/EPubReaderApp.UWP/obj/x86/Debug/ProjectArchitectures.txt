@@ -1,0 +1,1 @@
+Y:\Projects\EPubReaderApp\EPubReaderApp\EPubReaderApp.UWP\EPubReaderApp.UWP.csproj;x86

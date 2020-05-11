@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EPubReaderApp.Views.NewItemPage"
+             Title="New Item">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="Start">
+                        <Button Text="Choose File" FontSize="Medium" Clicked="Button_Clicked" BackgroundColor="LightGray"/>
+                        <Image x:Name="CoverImage" Aspect="AspectFit" WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout Padding="15" HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Item.Text}" FontSize="Title" />
+                        
+                        <Label Text="{Binding Item.Description}" FontSize="Large" Margin="0" />
+                    </StackLayout>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black"/>
+                <WebView x:Name="ContentWebView" VerticalOptions="FillAndExpand"/>
+                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Black"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="20" Margin="15,0" >
+                    <Button Text="|&lt; Start" FontSize="Large" Clicked="Button_Start_Clicked" HorizontalOptions="Start"/>
+                    <Button Text="&lt;&lt;&lt; Prev" FontSize="Large" Clicked="Button_Prev_Clicked" HorizontalOptions="Start"/>
+                    <Button Text="Next &gt;&gt;&gt;" FontSize="Large" Clicked="Button_Next_Clicked" HorizontalOptions="End"/>
+                    <Button Text="End &gt;|" FontSize="Large" Clicked="Button_End_Clicked" HorizontalOptions="End"/>
+                    <Label x:Name="UserAgent" FontSize="Medium" Margin="0" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

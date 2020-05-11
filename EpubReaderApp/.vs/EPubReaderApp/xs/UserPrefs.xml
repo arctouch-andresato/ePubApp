@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{3D6CCF37-6006-46F7-B26A-D4874BEA225F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EPubReaderApp/Views/NewItemPage.xaml">
+    <Files>
+      <File FileName="EPubReaderApp/Views/NewItemPage.xaml" Line="20" Column="36" />
+      <File FileName="EPubReaderApp/Views/NewItemPage.xaml.cs" Line="104" Column="14" />
+      <File FileName="EPubReaderApp/Models/Item.cs" />
+      <File FileName="EPubReaderApp/Views/ItemsPage.xaml" />
+      <File FileName="EPubReaderApp/Views/ItemsPage.xaml.cs" />
+      <File FileName="EPubReaderApp/ViewModels/ItemsViewModel.cs" />
+      <File FileName="EPubReaderApp.iOS/Main.cs" />
+      <File FileName="EPubReaderApp.iOS/BaseUrl.cs" Line="14" Column="48" />
+      <File FileName="EPubReaderApp/IBaseUrl.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EPubReaderApp" expanded="True">
+            <Node name="EPubReaderApp" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="NewItemPage.xaml" expanded="True" selected="True" />
+              </Node>
+            </Node>
+            <Node name="EPubReaderApp.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.EPubReaderApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.73AC15CB-409D-46B3-B4F5-8B3E9AAE3F6F" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -29,7 +29,7 @@ namespace EPubReaderApp.Services
 
         public void Initialize()
         {
-            Barrel.Current.EmptyAll();
+            //Barrel.Current.EmptyAll();
             var httpClient = new HttpClient();
             var options = new ContentfulOptions()
             {
@@ -155,19 +155,27 @@ namespace EPubReaderApp.Services
             var epubBook = EpubReader.ReadBook(asset.Path);
 
             var tempFolder = BookEnvironment.GetTempLocalPathForEpub();
-            if (!Directory.Exists(Path.GetDirectoryName(tempFolder)))
+            
+            ExtractAllFilesFromEpub(epubBook, tempFolder);
+
+            return epubBook;
+        }
+
+        public void ExtractAllFilesFromEpub(EpubBook epubBook, string folder)
+        {
+            if (!Directory.Exists(Path.GetDirectoryName(folder)))
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(tempFolder));
+                Directory.CreateDirectory(Path.GetDirectoryName(folder));
             }
             else
             {
-                Directory.Delete(Path.GetDirectoryName(tempFolder), true);
-                Directory.CreateDirectory(Path.GetDirectoryName(tempFolder));
+                Directory.Delete(Path.GetDirectoryName(folder), true);
+                Directory.CreateDirectory(Path.GetDirectoryName(folder));
             }
             foreach (var file in epubBook.Content.AllFiles)
             {
                 var fileName = file.Key;
-                var fullPath = BookEnvironment.CombinePath(tempFolder, fileName);
+                var fullPath = BookEnvironment.CombinePath(folder, fileName);
 
                 if (!Directory.Exists(Path.GetDirectoryName(fullPath)))
                 {
@@ -185,8 +193,6 @@ namespace EPubReaderApp.Services
                 }
 
             }
-
-            return epubBook;
         }
 
         private bool ValidateEntry(JObject entry)

@@ -45,7 +45,12 @@ namespace EPubReaderApp
 
         public static string AddSourceTempPath(string htmlFileName)
         {
-            return DependencyService.Get<IBaseUrl>().Get() + htmlFileName;
+            if (Device.RuntimePlatform == "UWP")
+            {
+                return DependencyService.Get<IBaseUrl>().Get() + htmlFileName;
+            }
+            var bookFolder = TempBookFolderName + "/";
+            return Path.Combine(DependencyService.Get<IBaseUrl>().Get(), bookFolder) + htmlFileName;
         }
 
         public static string CombinePath(string path1, string path2)

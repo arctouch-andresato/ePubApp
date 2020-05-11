@@ -77,7 +77,7 @@ namespace EPubReaderApp.Views
             this.OnPropertyChanged("Item");
 
             //SaveHtmlCssFiles();
-            //ExtractAllFiles();
+            contentService.ExtractAllFilesFromEpub(epubBook, BookEnvironment.GetTempLocalPathForEpub());
 
             renderHtml();
         }
@@ -120,7 +120,7 @@ namespace EPubReaderApp.Views
         {
             if (epubBook == null) return;
 
-            var url = $"{baseUrl}{epubBook.Content.Html.ElementAt(index).Key}";
+            var url = BookEnvironment.AddSourceTempPath(epubBook.Content.Html.ElementAt(index).Key);
             this.ContentWebView.Source = url;
 
             

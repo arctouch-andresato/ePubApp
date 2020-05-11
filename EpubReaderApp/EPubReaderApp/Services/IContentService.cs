@@ -18,5 +18,6 @@ namespace EPubReaderApp.Services
 
         EpubBook ExtractEpubFromId(string assetId);
 
+        void ExtractAllFilesFromEpub(EpubBook epubBook, string folder);
     }
 }
